@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaduan Nestracare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <a href="#">Nestracare</a>
+        </div>
+        <ul>
+            <li class="navlink"><a href="index.html">Beranda</a></li>
+            <li class="navlink"><a href="index.html">Tentang</a></li>
+            <li class="navlink"><a href="index.html">Alur Pengaduan</a></li>
+            <li class="navlink"><a href="index.html">FAQ</a></li>
+            <li class="navlink"><a href="login.html" class="log-button">Login</a></li>
+        </ul>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </nav>
+
+    <!-- PENGADUAN SECTION -->
+    <section class="pengaduan">
+        <h1>Form Pengaduan</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Sebagai:</label>
+                <select id="role" name="role" onchange="checkRole()">
+                    <option value selected disabled>Pilih Sebagai</option>
+                    <option value="siswa">Siswa</option>
+                    <option value="guru">Guru</option>
+                    <option value="wali_siswa">Wali Siswa</option>
+                </select>
+            </div>
+            <div class="form-group" id="kelas-group">
+                <label for="kelas">Kelas:</label>
+                <select id="kelas" name="kelas" disabled>
+                    <option value selected disabled>Pilih Kelas</option>
+                    <option value="kelas_1">Kelas 1</option>
+                    <option value="kelas_2">Kelas 2</option>
+                    <option value="kelas_3">Kelas 3</option>
+                </select>
+            </div>
+            <div class="form-group anonim">
+                <label for="anonymous">Kirim Secara Anonim:</label>
+                <input type="checkbox" id="anonymous" name="anonymous">
+            </div>
+            <div class="form-group">
+                <label for="complaint_type">Jenis Pengaduan:</label>
+                <select id="complaint_type" name="complaint_type" required>
+                    <option value selected disabled>Pilih Jenis Pengaduan</option>
+                    <option value="bullying_perundungan">Bullying / Perundungan</option>
+                    <option value="saran_kritik">Saran atau Kritik untuk Sekolah</option>
+                    <option value="keluhan_lainnya">Keluhan Lainnya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Deskripsi Pengaduan:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="evidence">Bukti (foto, video, atau file lainnya):</label>
+                <input type="file" id="evidence" name="evidence">
+            </div>
+            <button type="submit">Kirim Pengaduan</button>
+        </form>
+        <p>"Jangan biarkan ketakutan atau keraguan meredam keberanian Anda. Ingatlah bahwa suara Anda memiliki kekuatan untuk mempengaruhi dunia di sekitar Anda. Jadilah pelopor, jangan takut untuk mengambil langkah pertama, dan percayalah bahwa setiap tindakan kecil dapat membuat perbedaan besar."</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 - Developed by <a href="#">Fjaring Al Zulizar</a> </p>
+    </footer>
+
+    <script>
+        function checkRole() {
+            var role = document.getElementById("role").value;
+            var kelasGroup = document.getElementById("kelas-group");
+            var kelasSelect = document.getElementById("kelas");
+
+            if (role !== "siswa") {
+                kelasSelect.disabled = true;
+                kelasSelect.value = ""; // reset selected value
+            } else {
+                kelasSelect.disabled = false;
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
