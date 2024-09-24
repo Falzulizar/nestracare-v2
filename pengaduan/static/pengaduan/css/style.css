@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #DFF5FF;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+}
+
+.navlink {
+    list-style: none;
+    padding: 20px;
+}
+
+.navlink a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #000;
+}
+
+/* HERO SECTION */
+section {
+    padding: 140px;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #67C6E3;
+}
+
+.hero .left-hero {
+    width: 60%;
+}
+
+.hero .left-hero h1 {
+    color: #fff;
+    line-height: 45px;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+.hero .left-hero p {
+    font-size: 1.12rem;
+    margin-bottom: 18px;
+}
+
+.hero .left-hero a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #378CE7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hero .left-hero a:hover {
+    background-color: #3079c7;
+    transition: 0.3s;
+}
+
+.hero .right-hero {
+    width: 40%;
+}
+
+.hero .right-hero img {
+    height: 300px;
+    margin-left: 100px;
+}
+
+/* ABOUT SECTION */
+.about {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DFF5FF;
+}
+
+.about-wrapper h1 {
+    text-align: center;
+}
+
+.about-wrapper p {
+    font-size: 1.12rem;
+    text-align: center;
+    background-color: #67C6E3;
+    color: #fff;
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: 10px 10px 9px -9px rgba(0,0,0,0.75);
+}
+
+/* ALUR SECTION */
+.alur {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #67C6E3;
+}
+
+.alur h1 {
+    color: #fff;
+}
+
+.alur-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 700px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 245px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #DFF5FF;
+    border-radius: 20px;
+    box-shadow: 10px 10px 9px -9px rgba(0,0,0,0.75);
+}
+
+.box i {
+    font-size: 2rem;
+    background-color: #378CE7;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.box h3 {
+    color: #378CE7;
+}
+
+.box p {
+    text-align: center;
+}
+
+/* FAQ SECTION */
+.faq {
+    width: 100%;    
+    background-color: #DFF5FF;
+}
+
+.faq h1 {
+    text-align: center;
+}
+
+.faq-wrapper {
+    background-color: #67C6E3;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 2px;
+}
+
+.question {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.answer {
+    padding: 10px;
+    display: none;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+}
+
+.answer.show {
+    display: block;
+    max-height: 200px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.pengaduan {
+    padding: 40px 140px;
+    background-color: #67C6E3;
+    color: #fff;
+}
+
+.pengaduan h1 {
+    text-align: center;
+}
+
+.pengaduan p {
+    font-size: 1.12rem;
+    text-align: center;
+    color: #fff;
+    padding: 24px;
+}
+
+.anonim {
+    display: flex;
+    align-items: center;
+}
+
+.anonim label {
+    margin-right: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.12rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    appearance: none;
+    font-family: "Poppins", sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #378CE7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* FOOTER */
+footer {
+    background-color: #67C6E3;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    /* NAVBAR */
+    nav {
+        height: 50px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #DFF5FF;
+    }
+
+    nav ul.show {
+        display: flex;
+        position: absolute;
+        top: 5%;
+    }
+
+    .navlink {
+        padding: 12px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navlink:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* HERO */
+    section {
+        padding: 20px;
+    }
+
+    .hero .right-hero {
+        display: none;
+    }
+
+    .hero .left-hero {
+        width: 100%;
+    }
+
+    /* ABOUT */
+    .about-wrapper h1 {
+        font-size: 24px;
+    }
+    .about-wrapper p {
+        font-size: 16px;
+    }
+
+    /* ALUR */
+    .box {
+        width: 48%;
+        height: 29%;
+        height: 190px;
+        padding: 12px;
+        margin: 5px 4px;
+    }
+
+    .box i {
+        font-size: 10px;
+    }
+
+    .box h3 {
+        font-size: 11px;
+    }
+
+    .box p {
+        font-size: 10px;
+    }
+
+    /* FAQ */
+    .faq h1 {
+        font-size: 25px;
+        margin-bottom: 12px;
+    }
+
+    /* PENGADUAN */
+    .pengaduan {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,101 @@
+{% extends 'pengaduan/base.html' %}
+{% block title %}Buat Pengaduan - Nestracare{% endblock %}
+
+{% block content %}
+    <section class="pengaduan">
+        <h1>Form Pengaduan</h1>
+        <form action="{% url 'pengaduan' %}" method="post" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_nama">Nama:</label>
+                <input type="text" id="id_nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="id_nomor_whatsapp">Nomor WhatsApp:</label>
+                <input type="text" id="id_nomor_whatsapp" name="nomor_whatsapp" maxlength="15" required>
+            </div>
+            <div class="form-group">
+                <label for="id_peran">Sebagai:</label>
+                <select id="id_peran" name="peran" onchange="checkRole()">
+                    <option value="" selected disabled>Pilih Sebagai</option>
+                    <option value="siswa">Siswa</option>
+                    <option value="guru">Guru</option>
+                    <option value="wali_siswa">Wali Siswa</option>
+                </select>
+            </div>
+            <div class="form-group" id="kelas-group">
+                <label for="id_kelas">Kelas:</label>
+                <select id="id_kelas" name="kelas" disabled>
+                    <option value="" selected disabled>Pilih Kelas</option>
+                    <option value="X PPLG 1">X PPLG 1</option>
+                    <option value="X PPLG 2">X PPLG 2</option>
+                    <option value="XI PPLG 1">XI PPLG 1</option>
+                    <option value="XI PPLG 2">XI PPLG 2</option>
+                    <option value="XII PPLG 1">XII PPLG 1</option>
+                    <option value="XII PPLG 2">XII PPLG 2</option>
+                    <option value="X TKJT 1">X TKJT 1</option>
+                    <option value="X TKJT 2">X TKJT 2</option>
+                    <option value="XI TKJT 1">XI TKJT 1</option>
+                    <option value="XI TKJT 2">XI TKJT 2</option>
+                    <option value="XII TKJT 1">XII TKJT 1</option>
+                    <option value="XII TKJT 2">XII TKJT 2</option>
+                    <option value="X TOKR 1">X TOKR 1</option>
+                    <option value="X TOKR 2">X TOKR 2</option>
+                    <option value="XI TOKR 1">XI TOKR 1</option>
+                    <option value="XI TOKR 2">XI TOKR 2</option>
+                    <option value="XII TOKR 1">XII TOKR 1</option>
+                    <option value="XII TOKR 2">XII TOKR 2</option>
+                    <option value="X TBSM 1">X TBSM 1</option>
+                    <option value="X TBSM 2">X TBSM 2</option>
+                    <option value="XI TBSM 1">XI TBSM 1</option>
+                    <option value="XI TBSM 2">XI TBSM 2</option>
+                    <option value="XII TBSM 1">XII TBSM 1</option>
+                    <option value="XII TBSM 2">XII TBSM 2</option>
+                    <option value="X TMI 1">X TMI 1</option>
+                    <option value="X TMI 2">X TMI 2</option>
+                    <option value="XI TMI 1">XI TMI 1</option>
+                    <option value="XI TMI 2">XI TMI 2</option>
+                    <option value="XII TMI 1">XII TMI 1</option>
+                    <option value="XII TMI 2">XII TMI 2</option>
+                </select>
+            </div>
+            <div class="form-group anonim">
+                <label for="id_anonim">Kirim Secara Anonim:</label>
+                <input type="checkbox" id="id_anonim" name="anonim">
+            </div>
+            <div class="form-group">
+                <label for="id_jenis_pengaduan">Jenis Pengaduan:</label>
+                <select id="id_jenis_pengaduan" name="jenis_pengaduan" required>
+                    <option value="" selected disabled>Pilih Jenis Pengaduan</option>
+                    <option value="bullying_perundungan">Bullying / Perundungan</option>
+                    <option value="saran_kritik">Saran atau Kritik untuk Sekolah</option>
+                    <option value="keluhan_lainnya">Keluhan Lainnya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_deskripsi">Deskripsi Pengaduan:</label>
+                <textarea id="id_deskripsi" name="deskripsi" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="id_bukti">Bukti (foto, video, atau file lainnya):</label>
+                <input type="file" id="id_bukti" name="bukti">
+            </div>
+            <button type="submit">Kirim Pengaduan</button>
+        </form>
+        <p>"Jangan biarkan ketakutan atau keraguan meredam keberanian Anda. Ingatlah bahwa suara Anda memiliki kekuatan untuk mempengaruhi dunia di sekitar Anda. Jadilah pelopor, jangan takut untuk mengambil langkah pertama, dan percayalah bahwa setiap tindakan kecil dapat membuat perbedaan besar."</p>
+    </section>
+
+    <script>
+        function checkRole() {
+            var roleSelect = document.getElementById("id_peran");
+            var kelasSelect = document.getElementById("id_kelas");
+
+            // Aktifkan/nonaktifkan form kelas berdasarkan pilihan "Sebagai"
+            kelasSelect.disabled = roleSelect.value !== "siswa";
+        }
+
+        // Panggil fungsi checkRole() saat halaman dimuat 
+        // untuk memastikan keadaan awal sudah benar
+        window.onload = checkRole;
+    </script>
+{% endblock %}

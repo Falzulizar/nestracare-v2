@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nestracare{% endblock %}</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'pengaduan/image/tj.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'pengaduan/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <a href="{% url 'index' %}">Nestracare</a>
+        </div>
+        <ul>
+            <li class="navlink"><a href="{% url 'index' %}">Beranda</a></li>
+            <li class="navlink"><a href="#about">Tentang</a></li>
+            <li class="navlink"><a href="#alur">Alur Pengaduan</a></li>
+            <li class="navlink"><a href="#faq">FAQ</a></li>
+        </ul>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 - Developed by <a href="#">Fjaring Al Zulizar</a> </p>
+    </footer>
+    <script src="{% static 'pengaduan/js/script.js' %}"></script>
+</body>
+</html>
